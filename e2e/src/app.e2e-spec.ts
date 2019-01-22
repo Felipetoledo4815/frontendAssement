@@ -1,5 +1,6 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
+import { element } from '@angular/core/src/render3';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -10,14 +11,28 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to frontendAssement!');
+    expect(page.getTitleText()).toEqual('Brastlewark Town');
   });
 
-  afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    }));
+  it('should return Tobus Quickwhistle', function() {
+    const gnomeName = 'Tobus Quickwhistle';
+    page.sendKeysToNameFilter(gnomeName);
+    expect(page.getFirstGnomeName()).toEqual(gnomeName);
+    page.clearNameFilter();
+  });
+
+  it('should return Cogwitz Voidratchet', function() {
+    const gnomeName = 'Cogwitz Voidratchet';
+    page.sendKeysToNameFilter(gnomeName);
+    expect(page.getFirstGnomeName()).toEqual(gnomeName);
+    page.clearNameFilter();
+  });
+
+  it('should return Fizkin Voidbuster', function() {
+    const profession = 'medic';
+    const gnomeName = 'Fizkin Voidbuster';
+    page.sendKeysToProfessionFilter1(profession);
+    expect(page.getFirstGnomeName()).toEqual(gnomeName);
+    page.clearProfessionFilter();
   });
 });
