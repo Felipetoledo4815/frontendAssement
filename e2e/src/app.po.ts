@@ -12,20 +12,40 @@ export class AppPage {
     return element(by.css('app-root mat-toolbar span')).getText();
   }
 
+  toggleFilters() {
+    element(by.id('mat-expansion-panel-header-0')).click();
+  }
+
   sendKeysToNameFilter(name: string) {
     element(by.id('mat-input-0')).sendKeys(name);
   }
 
+  sendKeysToHairColorFilter(hairColor: string) {
+    element(by.id('mat-input-1')).sendKeys(hairColor);
+  }
+
+  sendKeysToGenderFilter(gender: string) {
+    element(by.id('mat-input-2')).sendKeys(gender);
+  }
+
   sendKeysToProfessionFilter1(profession: string) {
-    element(by.id('mat-input-1')).sendKeys(profession);
+    element(by.id('mat-input-3')).sendKeys(profession);
   }
 
   clearNameFilter() {
     element(by.id('mat-input-0')).clear();
   }
 
-  clearProfessionFilter() {
+  clearHairColorFilter() {
     element(by.id('mat-input-1')).clear();
+  }
+
+  clearGenderFilter() {
+    element(by.id('mat-input-2')).clear();
+  }
+
+  clearProfessionFilter1() {
+    element(by.id('mat-input-3')).clear();
   }
 
   getFirstGnomeName() {

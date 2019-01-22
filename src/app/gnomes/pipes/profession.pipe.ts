@@ -6,7 +6,7 @@ import { Gnome } from 'src/app/models/gnome';
 })
 export class ProfessionPipe implements PipeTransform {
 
-  transform(gnomes: any[], searchTerm: string): Gnome[] {
+  transform(gnomes: Gnome[], searchTerm: string): Gnome[] {
     if (!gnomes || !searchTerm) {
       return gnomes;
     }

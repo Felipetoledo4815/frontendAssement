@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NamePipe } from './gnomes/pipes/name.pipe';
 import { ProfessionPipe } from './gnomes/pipes/profession.pipe';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HairColorPipe } from './gnomes/pipes/hair-color.pipe';
+import { GenderPipe } from './gnomes/pipes/gender.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     GnomesComponent,
     GnomeProfileComponent,
     NamePipe,
-    ProfessionPipe
+    ProfessionPipe,
+    HairColorPipe,
+    GenderPipe
   ],
   imports: [
     BrowserModule,

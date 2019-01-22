@@ -1,6 +1,6 @@
 <cdk-virtual-scroll-viewport itemSize="260" minBufferPx="1000" maxBufferPx="5000" class="list-container lg" autosize>
   
-  <mat-list *cdkVirtualFor="let g of gnomes | gnomeName:searchName | gnomeProfession:searchProfession1 | gnomeProfession:searchProfession2">
+  <mat-list *cdkVirtualFor="let g of gnomes | gnomeName:searchName | gnomeProfession:searchProfession1 | gnomeProfession:searchProfession2 | gnomeHairColor:searchHairColor | gnomeGender:searchGender">
     <app-gnome-profile [setGnome]=g></app-gnome-profile>
   </mat-list>
   

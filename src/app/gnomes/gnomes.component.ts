@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Gnome } from '../models/gnome';
 import { GnomeService } from '../services/gnome.service';
 import * as _ from 'lodash';
-import { debug } from 'util';
 
 @Component({
   selector: 'app-gnomes',
@@ -13,9 +12,11 @@ import { debug } from 'util';
 export class GnomesComponent implements OnInit {
 
   gnomes: Gnome[];
-  searchName: string;
-  searchProfession1: string;
-  searchProfession2: string;
+  searchName = '';
+  searchProfession1 = '';
+  searchProfession2 = '';
+  searchHairColor = '';
+  searchGender = '';
 
   @Input()
   set setSearchName (name: string) {
@@ -28,6 +29,14 @@ export class GnomesComponent implements OnInit {
   @Input()
   set setSearchProfession2 (profession: string) {
     this.searchProfession2 = profession;
+  }
+  @Input()
+  set setSearchHairColor (hairColor: string) {
+    this.searchHairColor = hairColor;
+  }
+  @Input()
+  set setSearchGender (gender: string) {
+    this.searchGender = gender;
   }
 
   constructor(private gnomeService: GnomeService) {

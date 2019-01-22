@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Gnome } from '../../models/gnome';
 
 @Pipe({
-  name: 'gnomeName'
+  name: 'gnomeHairColor'
 })
-export class NamePipe implements PipeTransform {
+export class HairColorPipe implements PipeTransform {
 
   transform(gnomes: Gnome[], searchTerm: string): Gnome[] {
     if (!gnomes || !searchTerm) {
@@ -12,6 +12,6 @@ export class NamePipe implements PipeTransform {
     }
 
     return gnomes.filter(gnome =>
-      gnome.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+      gnome.hair_color.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
   }
 }
